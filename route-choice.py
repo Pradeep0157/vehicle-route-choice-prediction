@@ -31,10 +31,10 @@ def getFlows(d, f1, alpha1, C1, beta1, f2, alpha2, C2, beta2, tol=1e-6, max_iter
     case_2_time = max(t1_zero, t2_all)
 
     if case_1_time < case_2_time:
-        print("Equilibrium condition is when all flow is on path 1.")
+        #Equilibrium condition is when all flow is on path 1.
         return d, 0, t1_all, 0
     else:
-        print("Equilibrium condition is when all flow is on path 2.")
+        #Equilibrium condition is when all flow is on path 2.
         return 0, d, 0, t2_all
 
 #Get and validate user input.
@@ -64,6 +64,7 @@ def main():
 
     try:
         x1, x2, t1_time, t2_time = getFlows(d, f1, alpha1, C1, beta1, f2, alpha2, C2, beta2)
+        print("The equilibrium condition for all used route is:")
         print(f"Flow on path 1(x1) = {x1:.3f} veh/hr")
         print(f"Flow on path 2(x2) = {x2:.3f} veh/hr")
         print(f"Travel time on Path 1: {t1_time:.3f} min")
